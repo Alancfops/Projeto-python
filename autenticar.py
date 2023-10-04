@@ -1,19 +1,44 @@
 clientes={
 
 }
+enter=False
 def register_customer(escolha):
-    novo_cliente=input("Digite seu nome: ")
-    nova_senha=input("Digite sua senha: ")
-    if novo_cliente not in clientes:
-        clientes[novo_cliente] = nova_senha
-        print("Cliente cadatrado com sucesso")
-    else:
-        print("Usuario ja cadastrado")
+    while True:
+        try:
+            novo_cliente = input("Digite seu nome: ")
+            
+            if not novo_cliente.strip():
+                raise ValueError
+            
+            nova_senha = input("Digite sua senha: ")
+            if not nova_senha.strip():
+                raise ValueError
+            
+            if novo_cliente not in clientes:
+                clientes[novo_cliente] = nova_senha
+                print("Cliente cadastrado com sucesso")
+            else:
+                print("Usuário já cadastrado")
+            break
+        except ValueError:
+            print("ERRO!! Os espaços não podem estar em branco ")
 
 def customer_login(escolha):
-    cliente = input("Digite seu nome: ")
-    senha = input("Digite sua senha: ") 
-    if cliente in clientes and clientes[cliente]==senha:
-        print("Cliente logado com sucesso, aproveite e bom apetite")
-    else:
-        print("Nome ou senha incorretos, tente novamente")    
+    global enter
+    while True:
+        try:
+            cliente = input("Digite seu nome: ")
+            senha = input("Digite sua senha: ")
+            
+            if not cliente.strip():
+                raise ValueError
+            
+            if cliente in clientes and clientes[cliente] == senha:
+                print("Cliente logado com sucesso, aproveite e bom apetite")
+                enter = True
+                break 
+            else:
+                print("Nome ou senha incorretos, tente novamente")
+        except ValueError:
+            pass
+   
