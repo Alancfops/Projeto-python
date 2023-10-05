@@ -42,4 +42,3 @@ def customer_login(escolha):
         except ValueError:
             pass
         return False
-   

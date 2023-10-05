@@ -3,14 +3,15 @@ from cardapio import*
 import os
 import time
 
+"""print("Bem vindo a pizzaria Smile")
 while True:
-    print("Bem vindo a pizzaria Smile")
     print("="*100)
     print("Menu")
     print("1 - Cadastro")
     print("2 - Login")
     print("3 - Fazer pedido")
-    print("4 - Finalizar programa")
+    print("4 - Alterar pedido")
+    print("5 - Finalizar programa")
 
 
     while True:
@@ -28,9 +29,10 @@ while True:
         enter=customer_login(escolha)
     elif escolha == 3:
         if enter==True:
-            fazer_pedido(escolha)
+            make_a_wish(escolha)
         else:
             print("Erro: Cadastre-se primeiro")
     elif escolha == 4:
         print("Obrigado pela preferência")
-        break
+        break"""
+make_a_wish()
