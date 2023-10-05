@@ -3,7 +3,7 @@ from cardapio import*
 import os
 import time
 
-"""print("Bem vindo a pizzaria Smile")
+print("Bem vindo a pizzaria Smile")
 while True:
     print("="*100)
     print("Menu")
@@ -34,5 +34,4 @@ while True:
             print("Erro: Cadastre-se primeiro")
     elif escolha == 4:
         print("Obrigado pela preferência")
-        break"""
-make_a_wish()
+        break

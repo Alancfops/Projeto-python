@@ -1,14 +1,14 @@
 pedidos = {}
 cardapio = {
-    "Bacon": 25.00,
-    "Calabresa": 30.00,
-    "Quatro queijos": 25.00,
-    "Frango com catupiry": 26.00,
-    "Portuguesa": 31.00,
-    "Cartola": 29.00,
+    "bacon": 25.00,
+    "calabresa": 30.00,
+    "quatro queijos": 25.00,
+    "frango com catupiry": 26.00,
+    "portuguesa": 31.00,
+    "cartola": 29.00,
 }
 
-def make_a_wish():
+def make_a_wish(escolha):
     while True:
         for pizza, preco in cardapio.items():
             print(f"{pizza}: R${preco:.2f}")
