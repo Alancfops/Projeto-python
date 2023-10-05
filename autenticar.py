@@ -1,6 +1,7 @@
 clientes={
 
 }
+
 enter=False
 def register_customer(escolha):
     while True:
@@ -24,7 +25,6 @@ def register_customer(escolha):
             print("ERRO!! Os espaços não podem estar em branco ")
 
 def customer_login(escolha):
-    global enter
     while True:
         try:
             cliente = input("Digite seu nome: ")
@@ -35,10 +35,11 @@ def customer_login(escolha):
             
             if cliente in clientes and clientes[cliente] == senha:
                 print("Cliente logado com sucesso, aproveite e bom apetite")
-                enter = True
-                break 
+                return True
+
             else:
                 print("Nome ou senha incorretos, tente novamente")
         except ValueError:
             pass
+        return False
    

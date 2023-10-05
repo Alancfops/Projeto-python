@@ -25,7 +25,7 @@ while True:
     if escolha == 1:
         register_customer(escolha)
     elif escolha == 2:
-        customer_login(escolha)
+        enter=customer_login(escolha)
     elif escolha == 3:
         if enter==True:
             fazer_pedido(escolha)

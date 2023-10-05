@@ -8,7 +8,8 @@ cardapio = {
     "Cartola": 29.00,
 }
 
-def fazer_pedido(escolha):
+def fazer_pedido():
+
     while True:
         for pizza, preco in cardapio.items():
             print(f"{pizza}: R${preco:.2f}")
