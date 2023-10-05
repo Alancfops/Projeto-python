@@ -27,16 +27,16 @@ def make_a_wish(escolha):
                     tamanho = detalhes["tamanho"]
 
                     if sabor in cardapio:
-                        preco_unitario = cardapio[sabor]
+                        preco_pizza = cardapio[sabor]
 
                         if tamanho == "p" or tamanho == "pequena":
-                            preco_unitario -= 5.00
+                            preco_pizza -= 5.00
                         elif tamanho == "m" or tamanho == "media":
-                            preco_unitario = preco_unitario
+                            preco_pizza = preco_pizza
                         elif tamanho == "g" or tamanho == "grande":
-                            preco_unitario += 5.00
+                            preco_pizza += 5.00
 
-                        valor_sabor = quantidade * preco_unitario
+                        valor_sabor = quantidade * preco_pizza
                         valor_total += valor_sabor
 
                 print(f"Valor total do pedido: R${valor_total:.2f}")
@@ -70,5 +70,5 @@ def make_a_wish(escolha):
             else:
                 print("Sabor inexistente. Por favor, escolha um sabor válido.")
         
-        except Exception:
+        except ValueError:
             print("ERRO!!!, Tente novamente")
