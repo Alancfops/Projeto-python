@@ -8,7 +8,7 @@ cardapio = {
     "portuguesa": 31.00,
     "cartola": 29.00,
 }
-
+feito=False
 def make_a_wish(escolha):
     while True:
         for pizza, preco in cardapio.items():
@@ -69,10 +69,13 @@ def make_a_wish(escolha):
                 pedido = {"sabor": sabor, "quantidade": quantidade, "tamanho": tamanho}
                 
                 pedidos.append(pedido)
+                return True
             else:
                 print("Sabor inexistente. Por favor, escolha um sabor válido.")
         
         except ValueError:
             print("ERRO!!!, Tente novamente")
+
+            return False
 
 

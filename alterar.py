@@ -1,3 +1,5 @@
+import os
+import time
 def novo_valor(pedidos, cardapio):
     valor_total = 0.00
 
@@ -75,10 +77,10 @@ def delete_order(pedidos, cardapio):
 
         except ValueError:
             print("Número de pedido inválido ou entrada incorreta. Tente novamente.")
-
-
-
-
-
-
-
+#Limpar terminal
+def limpar_terminal():
+    time.sleep(1.4)
+    if os.name=='posix':
+        os.system('clear')
+    elif os.name=='nt':
+        os.system==('cls')    

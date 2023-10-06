@@ -19,6 +19,12 @@ while True:
     while True:
         try:
             escolha = int(input("Digite a escolha desejada: "))
+            limpar_terminal()
+            time.sleep(1.4)
+            if os.name=='posix':
+                os.system('clear')
+            elif os.name=='nt':
+                os.system==('cls')
             if escolha not in [1, 2, 3, 4, 5, 6]:
                 raise ValueError
             break
@@ -27,17 +33,24 @@ while True:
 
     if escolha == 1:
         register_customer(escolha)
+        limpar_terminal()
     elif escolha == 2:
         enter=customer_login(escolha)
     elif escolha == 3:
         if enter==True:
-            make_a_wish(escolha)
+            feito=make_a_wish(escolha)
         else:
             print("Erro: Cadastre-se primeiro")
     elif escolha ==4:
-         edit_order(pedidos, cardapio)
+        if feito==True:
+            edit_order(pedidos, cardapio)
+        else:
+            print("Faça um pedido primeiro")
     elif escolha == 5:
-        delete_order(pedidos, cardapio)         
+        if feito==True:
+            delete_order(pedidos, cardapio)
+        else:
+            print("Faça um pedido primeiro")             
     elif escolha == 6:
         print("Obrigado pela preferência")
         break
