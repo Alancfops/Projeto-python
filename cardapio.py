@@ -1,9 +1,10 @@
-pedidos = {}
+pedidos = [] 
+
 cardapio = {
     "bacon": 25.00,
     "calabresa": 30.00,
-    "quatro queijos": 25.00,
-    "frango com catupiry": 26.00,
+    "queijo": 20.00,
+    "frango": 20.00,
     "portuguesa": 31.00,
     "cartola": 29.00,
 }
@@ -18,13 +19,16 @@ def make_a_wish(escolha):
             
             if sabor == "finalizar":
                 print("Pedido finalizado")
-                print(pedidos)
+                print("Pedidos:")
+                for pedido in pedidos:
+                    print(f"Sabor: {pedido['sabor']}, Quantidade: {pedido['quantidade']}, Tamanho: {pedido['tamanho']}")
 
                 valor_total = 0.00
 
-                for sabor, detalhes in pedidos.items():
-                    quantidade = detalhes["quantidade"]
-                    tamanho = detalhes["tamanho"]
+                for pedido in pedidos:
+                    quantidade = pedido["quantidade"]
+                    sabor = pedido["sabor"]
+                    tamanho = pedido["tamanho"]
 
                     if sabor in cardapio:
                         preco_pizza = cardapio[sabor]
@@ -62,13 +66,13 @@ def make_a_wish(escolha):
                     except ValueError:
                         print("Tamanho inválido")
 
-                if sabor in pedidos:
-                    pedidos[sabor]["quantidade"] += quantidade
-                    pedidos[sabor]["tamanho"] = tamanho
-                else:
-                    pedidos[sabor] = {"quantidade": quantidade, "tamanho": tamanho}
+                pedido = {"sabor": sabor, "quantidade": quantidade, "tamanho": tamanho}
+                
+                pedidos.append(pedido)
             else:
                 print("Sabor inexistente. Por favor, escolha um sabor válido.")
         
         except ValueError:
             print("ERRO!!!, Tente novamente")
+
+
