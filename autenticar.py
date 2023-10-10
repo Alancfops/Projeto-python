@@ -1,3 +1,5 @@
+from alterar import limpar_rapido
+from alterar import limpar_terminal
 clientes={
 
 }
@@ -21,9 +23,11 @@ def register_customer(escolha):
                 print("")
                 clientes[novo_cliente] = nova_senha
                 print("Cliente cadastrado com sucesso")
+                limpar_terminal()
             else:
                 print("")
                 print("Usuário já cadastrado")
+                limpar_rapido()
             break
         except ValueError:
             print("")
@@ -35,18 +39,25 @@ def customer_login(escolha):
             print("")
             cliente = input("Digite seu nome: ")
             print("")
-            senha = input("Digite sua senha: ")
-            
             if not cliente.strip():
+                raise ValueError
+            senha = input("Digite sua senha: ")
+            if not senha.strip():
                 raise ValueError
             
             if cliente in clientes and clientes[cliente] == senha:
                 print("")
                 print("Cliente logado com sucesso, aproveite e bom apetite")
+                limpar_terminal()
                 return True
 
             else:
+                print("")
                 print("Nome ou senha incorretos, tente novamente")
+                print("")
+                limpar_rapido()
         except ValueError:
-            pass
+            print("")
+            print("ERRO!!! Tente novamente")
+            limpar_terminal()
         return False

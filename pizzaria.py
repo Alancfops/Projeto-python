@@ -31,6 +31,7 @@ while True:
                 raise ValueError
             break
         except ValueError:
+            print("")
             print("ERRO! Apenas as opções informadas")
 
     if escolha == 1:
@@ -47,8 +48,10 @@ while True:
             limpar_rapido()
     elif escolha ==4:
         edit_order(pedidos, cardapio)
+        limpar_terminal()
     elif escolha == 5:
-            delete_order(pedidos, cardapio)             
+        delete_order(pedidos, cardapio)      
+        limpar_terminal()       
     elif escolha == 6:
         print("")
         print("Finalizando...")

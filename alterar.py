@@ -25,6 +25,7 @@ def novo_valor(pedidos, cardapio):
 
 def edit_order(pedidos, cardapio):
     while True:
+        limpar_terminal()
         print("="*100)
         print("")
         print("Pedidos:")
@@ -38,6 +39,7 @@ def edit_order(pedidos, cardapio):
             print("")
             pedido_numero = int(input("Digite o número do pedido que deseja alterar ou 0 para sair: "))
             print("")
+            time.sleep(0.8)
             if pedido_numero == 0:
                 break
             if pedido_numero < 1 or pedido_numero > len(pedidos):
@@ -45,10 +47,12 @@ def edit_order(pedidos, cardapio):
             pedido = pedidos[pedido_numero - 1]
             print("")
             print(f"Editando pedido {pedido_numero}: Sabor: {pedido['sabor']}, Quantidade: {pedido['quantidade']}, Tamanho: {pedido['tamanho']}")
+            time.sleep(0.6)
             print("")
 
             quantidade = int(input(f"Qual a nova quantidade de pizzas que deseja para {pedido['sabor']}? "))
             print("")
+            time.sleep(0.4)
             tamanho = input(f"Digite o novo tamanho das pizzas de {pedido['sabor']} (P-Pequena, M-Media, G-Grande): ").lower()
             print("")
             print("Editando...")
@@ -61,11 +65,13 @@ def edit_order(pedidos, cardapio):
 
             print("")
             print("Pedido atualizado com sucesso!")
-            limpar_rapido()
+            time.sleep(0.4)
             valor_total = novo_valor(pedidos, cardapio)
             print("")
             print(f"Novo valor total do pedido: R${valor_total:.2f}")
             print("")
+            time.sleep(0.5)
+            limpar_terminal()
 
         except ValueError:
             print("")
@@ -82,25 +88,30 @@ def delete_order(pedidos, cardapio):
             print(f"{i + 1}: Sabor: {pedido['sabor']}, Quantidade: {pedido['quantidade']}, Tamanho: {pedido['tamanho']}")
         print("")
         print("="*100)
+        time.sleep(0.6)
         try:
             print("")
             pedido_numero = int(input("Digite o número do pedido que deseja deletar ou 0 para sair: "))
             print("")
+            time.sleep(0.8)
             if pedido_numero == 0:
                 break
             if pedido_numero < 1 or pedido_numero > len(pedidos):
                 raise ValueError
 
             del pedidos[pedido_numero - 1]
-            
             print("Pedido removido com sucesso!")
             print("")
+            time.sleep(0.4)
             valor_total = novo_valor(pedidos, cardapio)
             print(f"Novo valor total do pedido: R${valor_total:.2f}")
+            time.sleep(0.5)
+            limpar_terminal()
 
         except ValueError:
             print("")
             print("Número de pedido inválido ou entrada incorreta. Tente novamente.")
+            limpar_terminal()
 
 #Limpar terminal
 def limpar_terminal():
