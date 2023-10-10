@@ -39,9 +39,12 @@ while True:
         enter=customer_login(escolha)
     elif escolha == 3:
         if enter==True:
+            limpar_rapido()
             make_a_wish(escolha)
         else:
+            print("")
             print("Erro: Cadastre-se primeiro")
+            limpar_rapido()
     elif escolha ==4:
         edit_order(pedidos, cardapio)
     elif escolha == 5:
