@@ -1,3 +1,5 @@
+import time
+from alterar import limpar_rapido
 pedidos = [] 
 
 cardapio = {
@@ -8,19 +10,29 @@ cardapio = {
     "portuguesa": 31.00,
     "cartola": 29.00,
 }
-feito=False
+
 def make_a_wish(escolha):
     while True:
+        print("="*100)
+        print("")
+        print("Pizza: ")
+        print("")
         for pizza, preco in cardapio.items():
             print(f"{pizza}: R${preco:.2f}")
 
         try:
+            print("="*100)
+            print("")
             sabor = input("Digite o sabor da pizza que deseja ou digite 'Finalizar' para sair: ").lower()
             
             if sabor == "finalizar":
+                print("")
                 print("Pedido finalizado")
+                print("")
+                time.sleep(0.4)
                 print("Pedidos:")
                 for pedido in pedidos:
+                    print("")
                     print(f"Sabor: {pedido['sabor']}, Quantidade: {pedido['quantidade']}, Tamanho: {pedido['tamanho']}")
 
                 valor_total = 0.00
@@ -42,40 +54,46 @@ def make_a_wish(escolha):
 
                         valor_sabor = quantidade * preco_pizza
                         valor_total += valor_sabor
-
+                print("")
                 print(f"Valor total do pedido: R${valor_total:.2f}")
                 break
 
             if sabor in cardapio:
                 while True:
                     try:
+                        print("")
                         quantidade = int(input(f"Quantas pizzas de {sabor} deseja?: "))
                         if quantidade < 1:
                             raise ValueError
                         break
                     except ValueError:
+                        print("")
                         print("Quantidade inválida, digite um número maior que zero.")
                     
                 while True:
                     try:
+                        print("")
                         tamanho = input("Qual o tamanho das pizzas? (P-Pequena, M-Media, G-Grande): ").lower()
                             
                         if tamanho not in ["p", "pequena", "m", "media", "g", "grande"]:
                             raise ValueError
                         break
                     except ValueError:
+                        print("")
                         print("Tamanho inválido")
 
                 pedido = {"sabor": sabor, "quantidade": quantidade, "tamanho": tamanho}
                 
                 pedidos.append(pedido)
-                return True
             else:
+                print("")
                 print("Sabor inexistente. Por favor, escolha um sabor válido.")
         
         except ValueError:
+            print("")
             print("ERRO!!!, Tente novamente")
+            limpar_rapido()
 
-            return False
+           
 
 
