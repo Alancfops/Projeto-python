@@ -13,6 +13,7 @@ cardapio = {
     "cartola": 29.00,
 }
 
+#Funcao para fazer pedido
 def make_a_wish(escolha):
     while True:
         print("="*100)
@@ -99,7 +100,3 @@ def make_a_wish(escolha):
             print("")
             print("ERRO!!!, Tente novamente")
             limpar_rapido()
-
-           
-
-

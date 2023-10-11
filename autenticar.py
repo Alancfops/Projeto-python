@@ -4,6 +4,7 @@ clientes={
 
 }
 
+#Funcao para cadastrar
 enter=False
 def register_customer(escolha):
     while True:
@@ -33,6 +34,7 @@ def register_customer(escolha):
             print("")
             print("ERRO!! Os espaços não podem estar em branco ")
 
+#Funcao para fazer login
 def customer_login(escolha):
     while True:
         try:

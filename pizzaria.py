@@ -4,6 +4,7 @@ from alterar import*
 import os
 import time
 
+#Main da pizzaria
 print("="*100)
 print("")
 print("Bem vindo a pizzaria Smile's")

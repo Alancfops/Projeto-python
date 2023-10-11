@@ -1,5 +1,7 @@
 import os
 import time
+
+#Funcao para calcular pedido
 def novo_valor(pedidos, cardapio):
     valor_total = 0.00
 
@@ -23,6 +25,7 @@ def novo_valor(pedidos, cardapio):
 
     return valor_total
 
+#Funcao para editar pedido
 def edit_order(pedidos, cardapio):
     while True:
         limpar_terminal()
@@ -78,6 +81,7 @@ def edit_order(pedidos, cardapio):
             print("Número de pedido inválido ou entrada incorreta. Tente novamente.")
             limpar_rapido()
 
+#Funcao para excluir pedido
 def delete_order(pedidos, cardapio):
     while True:
         print("="*100)
@@ -113,7 +117,7 @@ def delete_order(pedidos, cardapio):
             print("Número de pedido inválido ou entrada incorreta. Tente novamente.")
             limpar_terminal()
 
-#Limpar terminal
+#Funcao para limpar terminal
 def limpar_terminal():
     time.sleep(1.4)
     if os.name=='posix':
