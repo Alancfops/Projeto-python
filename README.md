@@ -13,11 +13,3 @@ Bem-vindo ao **Pizzaria Terminal**, um projeto em Python que simula o funcioname
 ## 🚀 Tecnologias Utilizadas
 
 - **Python 3**: Linguagem principal para o desenvolvimento do sistema.
-
-## 📦 Instalação
-
-1. **Clone o repositório:**
-
-   ```bash
-   git clone https://github.com/seu-usuario/pizzaria-terminal.git
-   cd pizzaria-terminal
